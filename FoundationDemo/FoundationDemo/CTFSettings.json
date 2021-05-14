@@ -1,0 +1,19 @@
+{
+
+  "ExecutionReport": {
+    "GenerateReport": true,
+    "Location": "default"
+  },
+
+  "Web": {
+    
+      "AEM": {
+        "Host": "https://hrbcomlnp.hrblock.com",
+        "wait": 10000,
+        "Browser": "Chrome",
+        "ExecutionReportScreenshots": true
+      }
+    
+  }
+}
+
