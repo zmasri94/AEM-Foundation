@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\A1121085\\source\\repos\\FoundationDemo\\FoundationDemo\\FoundationDemo.csproj": {}
+    "C:\\Users\\A1121085\\Documents\\GitHub\\AEM-Foundation\\FoundationDemo\\FoundationDemo\\FoundationDemo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\A1121085\\source\\repos\\FoundationDemo\\FoundationDemo\\FoundationDemo.csproj": {
+    "C:\\Users\\A1121085\\Documents\\GitHub\\AEM-Foundation\\FoundationDemo\\FoundationDemo\\FoundationDemo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\A1121085\\source\\repos\\FoundationDemo\\FoundationDemo\\FoundationDemo.csproj",
+        "projectUniqueName": "C:\\Users\\A1121085\\Documents\\GitHub\\AEM-Foundation\\FoundationDemo\\FoundationDemo\\FoundationDemo.csproj",
         "projectName": "FoundationDemo",
-        "projectPath": "C:\\Users\\A1121085\\source\\repos\\FoundationDemo\\FoundationDemo\\FoundationDemo.csproj",
+        "projectPath": "C:\\Users\\A1121085\\Documents\\GitHub\\AEM-Foundation\\FoundationDemo\\FoundationDemo\\FoundationDemo.csproj",
         "packagesPath": "C:\\Users\\A1121085\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\A1121085\\source\\repos\\FoundationDemo\\FoundationDemo\\obj\\",
+        "outputPath": "C:\\Users\\A1121085\\Documents\\GitHub\\AEM-Foundation\\FoundationDemo\\FoundationDemo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
