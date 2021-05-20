@@ -47,7 +47,7 @@ namespace FoundationDemo
         //Earned income?
         public IElement YesEarnedIncome => GetElement("EarnedIncome", () => ElementBuilder.Button(SelectorBuilder.XPath("//label[@for = '1']", 1000)));
         public IElement NoEarnedIncome => GetElement("NoEarnedIncome", () => ElementBuilder.Button(SelectorBuilder.XPath("//label[@for = '2']", 1000)));
-        public IElement EarnedIncomeContinueBtn => GetElement("EarnedIncomeContinueBtn", () => ElementBuilder.Button(SelectorBuilder.XPath("//a[@data-di-id='di-id-e2accf9f-6118eac4']")));
+        public IElement EarnedIncomeContinueBtn => GetElement("EarnedIncomeContinueBtn", () => ElementBuilder.Button(SelectorBuilder.XPath("//a[@data-di-id='di-id-e2accf9f-ad1140a4']")));
         //Earn income from investments or rental properties last year?
 
 

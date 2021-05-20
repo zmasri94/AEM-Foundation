@@ -288,6 +288,31 @@
         .bigdesc {
             height: auto;
         }
+
+        .screenshot {
+            border-radius: 10px;
+            max-height: 100%;
+        }
+
+        .screnshotTooltip {
+            position: absolute;
+            text-decoration: underline;
+        }
+
+        .screnshotTooltip .screenshotTooltiptext {
+            visibility: hidden;
+            width: 70%;
+            height: auto;
+            border-radius: 10px;
+            position: fixed;
+            top: 20%;
+            left: 10%;
+            z-index: 1;
+        }
+
+        .screnshotTooltip:hover .screenshotTooltiptext {
+            visibility: visible;
+        }
     </style>
 </head>
 <body>
@@ -453,10 +478,13 @@
                                                              bottom: 0;" href="#">...Expand</a>
                                                         </div>
                                                         <div class="col-sm valCol">
-                                                            <img class="defaultImg" style="z-index: 0;"
-                                                                 src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/	2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/																		2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/	wAARCACHAIcDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/																		8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFR	kdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZm																	qKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/	8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/																	8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNER	UZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXm																	JmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/	9oADAMBAAIRAxEAPwD7c/tOz/5+4P8Av4v																	+NeXVoean99fzrPrsSscbdwooopiCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKA	CiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK																	1/wDhD9e/6Amo/wDgJJ/hWRX1xUSlylxjzHy9/wAIfr3/AEBNR/8AAST/AAo/4Q/Xv+gJqP8A4CSf4V9Q0VHtGX7M+Xv	+EP17/oCaj/4CSf4Uf8Ifr3/QE1H/AMBJP8K+oaKPaMPZny9/wh+vf9ATUf8AwEk/wo/4Q/Xv																	+gJqP/gJJ/hX1DRR7Rh7M+Xv+EP17/oCaj/4CSf4Uf8ACH69/wBATUf/AAEk/wAK+oaKPaMPZny9/	wAIfr3/AEBNR/8AAST/AAo/4Q/Xv+gJqP8A4CSf4V9Q0Ue0YezPkeiiitjEKKKKACiiigAr64r5Hr6h/wCEw0H/																	AKDenf8AgXH/AI1lU6GtPqa9FZH/AAmGg/8AQb07/wAC4/8AGj/hMNB/6Denf	+Bcf+NZWZrc16KyP+Ew0H/oN6d/4Fx/40f8JhoP/Qb07/wLj/xoswua9FZH/CYaD/0G9O/8C4/8aP8AhMNB/wCg3p3/AIFx/																	wCNFmFzXorI/wCEw0H/AKDenf8AgXH/AI0f8JhoP/Qb07/wLj/	xoswua9FZH/CYaD/0G9O/8C4/8aP+Ew0H/oN6d/4Fx/																	40WYXPl6iiiuo5QooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACii	igAooooAd5Mn9xvyptb39m3f8Az6zf9+z/																	AIVg0DCiiigQUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAetV5LRRUxNJhRRRVGYUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAf//	Z" />
-                                                            <a target="_blank" onClick='viewImg(this)' id="isScreenShotPresent">
-                                                                <img class="img" style="z-index: 1;" id="resultScreenShot"></img>
+                                                            <a target="_blank" href="/" onClick='viewImg(this)' id="isScreenShotPresent">
+                                                                <div class="screnshotTooltip">
+                                                                    View
+                                                                    <span class="screenshotTooltiptext">
+                                                                        <img class="screenshot img-thumbnail" alt="Screenshot" id="resultScreenShot" />
+                                                                    </span>
+                                                                </div>
                                                             </a>
                                                         </div>
                                                     </div>
@@ -483,10 +511,13 @@
                                                         <ul class="screenShots ExceptionBody">
                                                             <div class="">
                                                                 <li class="ScreenShot">
-                                                                    <img class="defaultImg" style="z-index: 0;"
-                                                                         src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/		2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/																			2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/	wAARCACHAIcDASIAAhEBAxEB/	8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/																			8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFR		kdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZm																		qKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/	8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/																			8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNER		UZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXm																		JmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/	9oADAMBAAIRAxEAPwD7c/tOz/5+4P8Av4v																		+NeXVoean99fzrPrsSscbdwooopiCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKA		CiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK																	1/wDhD9e/6Amo/wDgJJ/	hWRX1xUSlylxjzHy9/wAIfr3/AEBNR/8AAST/AAo/4Q/Xv+gJqP8A4CSf4V9Q0VHtGX7M+Xv	+EP17/oCaj/4CSf4Uf8Ifr3/QE1H/AMBJP8K+oaKPaMPZny9/wh+vf9ATUf8AwEk/wo/4Q/	Xv																	+gJqP/gJJ/hX1DRR7Rh7M+Xv+EP17/oCaj/4CSf4Uf8ACH69/wBATUf/AAEk/wAK+oaKPaMPZny9/		wAIfr3/AEBNR/8AAST/AAo/4Q/Xv+gJqP8A4CSf4V9Q0Ue0YezPkeiiitjEKKKKACiiigAr64r5Hr6h/wCEw0H/																		AKDenf8AgXH/AI1lU6GtPqa9FZH/AAmGg/8AQb07/wAC4/8AGj/hMNB/6Denf	+Bcf+NZWZrc16KyP+Ew0H/oN6d/4Fx/40f8JhoP/Qb07/wLj/xoswua9FZH/CYaD/0G9O/8C4/	8aP8AhMNB/wCg3p3/AIFx/																	wCNFmFzXorI/wCEw0H/AKDenf8AgXH/AI0f8JhoP/Qb07/wLj/		xoswua9FZH/CYaD/0G9O/8C4/8aP+Ew0H/oN6d/4Fx/																		40WYXPl6iiiuo5QooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACii	igAooooAd5Mn9xvyptb39m3f8Az6zf9+z/																			AIVg0DCiiigQUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAetV5LRRUxNJhRRRVGYUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAf//	Z" />
-                                                                    <a target="_blank" onClick='viewImg(this)' id="isScreenShotPresent">
-                                                                        <img class="img" style="z-index: 1;" id="resultScreenShot"></img>
+                                                                    <a target="_blank" href="/" onClick='viewImg(this)' id="isScreenShotPresent">
+                                                                        <div class="screnshotTooltip">
+                                                                            View
+                                                                            <span class="screenshotTooltiptext">
+                                                                                <img class="screenshot img-thumbnail" alt="Screenshot" id="resultScreenShot" />
+                                                                            </span>
+                                                                        </div>
                                                                     </a>
                                                                 </li>
                                                             </div>
@@ -565,11 +596,14 @@
                                 bottom: 0;" href="#">...Expand</a>
                             </div>
                             <div class="col valCol">
-                                <img class="defaultImg" style="z-index: 0;"
-                                     src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/	2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/																		2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/	wAARCACHAIcDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/																		8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFR	kdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZm																	qKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/	8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/																	8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNER	UZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXm																	JmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/	9oADAMBAAIRAxEAPwD7c/tOz/5+4P8Av4v																	+NeXVoean99fzrPrsSscbdwooopiCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKA	CiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK																	1/wDhD9e/6Amo/wDgJJ/hWRX1xUSlylxjzHy9/wAIfr3/AEBNR/8AAST/AAo/4Q/Xv+gJqP8A4CSf4V9Q0VHtGX7M+Xv	+EP17/oCaj/4CSf4Uf8Ifr3/QE1H/AMBJP8K+oaKPaMPZny9/wh+vf9ATUf8AwEk/wo/4Q/Xv																	+gJqP/gJJ/hX1DRR7Rh7M+Xv+EP17/oCaj/4CSf4Uf8ACH69/wBATUf/AAEk/wAK+oaKPaMPZny9/	wAIfr3/AEBNR/8AAST/AAo/4Q/Xv+gJqP8A4CSf4V9Q0Ue0YezPkeiiitjEKKKKACiiigAr64r5Hr6h/wCEw0H/																	AKDenf8AgXH/AI1lU6GtPqa9FZH/AAmGg/8AQb07/wAC4/8AGj/hMNB/6Denf	+Bcf+NZWZrc16KyP+Ew0H/oN6d/4Fx/40f8JhoP/Qb07/wLj/xoswua9FZH/CYaD/0G9O/8C4/8aP8AhMNB/wCg3p3/AIFx/																	wCNFmFzXorI/wCEw0H/AKDenf8AgXH/AI0f8JhoP/Qb07/wLj/	xoswua9FZH/CYaD/0G9O/8C4/8aP+Ew0H/oN6d/4Fx/																	40WYXPl6iiiuo5QooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACii	igAooooAd5Mn9xvyptb39m3f8Az6zf9+z/																	AIVg0DCiiigQUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAetV5LRRUxNJhRRRVGYUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAf//	Z" />
-                                <a target="_blank" onClick='viewImg(this)' id="isScreenShotPresent">
-                                    <img class="img" style="z-index: 1;" id="resultScreenShot"></img>
-                                </a>
+                                <a target="_blank" href="/" onClick='viewImg(this)' id="isScreenShotPresent">
+                                    <div class="screnshotTooltip">
+                                        View
+                                        <span class="screenshotTooltiptext">
+                                            <img class="screenshot img-thumbnail" alt="Screenshot" id="resultScreenShot" />
+                                        </span>
+                                    </div>
+                                </a>                                
                             </div>
                         </div>
                     </div>
@@ -594,10 +628,13 @@
                         <ul class="screenShots ExceptionBody">
                             <div class="">
                                 <li class="ScreenShot">
-                                    <img class="defaultImg" style="z-index: 0;"
-                                         src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/		2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/																			2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/	wAARCACHAIcDASIAAhEBAxEB/	8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/																			8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFR		kdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZm																		qKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/	8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/																			8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNER		UZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXm																		JmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/	9oADAMBAAIRAxEAPwD7c/tOz/5+4P8Av4v																		+NeXVoean99fzrPrsSscbdwooopiCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKA		CiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK																	1/wDhD9e/6Amo/wDgJJ/	hWRX1xUSlylxjzHy9/wAIfr3/AEBNR/8AAST/AAo/4Q/Xv+gJqP8A4CSf4V9Q0VHtGX7M+Xv	+EP17/oCaj/4CSf4Uf8Ifr3/QE1H/AMBJP8K+oaKPaMPZny9/wh+vf9ATUf8AwEk/wo/4Q/	Xv																	+gJqP/gJJ/hX1DRR7Rh7M+Xv+EP17/oCaj/4CSf4Uf8ACH69/wBATUf/AAEk/wAK+oaKPaMPZny9/		wAIfr3/AEBNR/8AAST/AAo/4Q/Xv+gJqP8A4CSf4V9Q0Ue0YezPkeiiitjEKKKKACiiigAr64r5Hr6h/wCEw0H/																		AKDenf8AgXH/AI1lU6GtPqa9FZH/AAmGg/8AQb07/wAC4/8AGj/hMNB/6Denf	+Bcf+NZWZrc16KyP+Ew0H/oN6d/4Fx/40f8JhoP/Qb07/wLj/xoswua9FZH/CYaD/0G9O/8C4/	8aP8AhMNB/wCg3p3/AIFx/																	wCNFmFzXorI/wCEw0H/AKDenf8AgXH/AI0f8JhoP/Qb07/wLj/		xoswua9FZH/CYaD/0G9O/8C4/8aP+Ew0H/oN6d/4Fx/																		40WYXPl6iiiuo5QooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACii	igAooooAd5Mn9xvyptb39m3f8Az6zf9+z/																			AIVg0DCiiigQUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAetV5LRRUxNJhRRRVGYUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAf//	Z" />
-                                    <a target="_blank" onClick='viewImg(this)' id="isScreenShotPresent">
-                                        <img class="img" style="z-index: 1;" id="resultScreenShot"></img>
+                                    <a target="_blank" href="/" onClick='viewImg(this)' id="isScreenShotPresent">
+                                        <div class="screnshotTooltip">
+                                            View
+                                            <span class="screenshotTooltiptext">
+                                                <img class="screenshot img-thumbnail" alt="Screenshot" id="resultScreenShot" />
+                                            </span>
+                                        </div>
                                     </a>
                                 </li>
                             </div>
@@ -1232,7 +1269,6 @@
                 $.each(mc, function (name, value) {
                     first = parseInt(name.split('-')[0], 10);
                     second = parseInt(name.split('-')[1], 10);
-                    console.log(between(dc, first, second));
                     if (between(dc, first, second)) {
                         th.addClass(value);
                     }
@@ -1245,7 +1281,6 @@
                 $.each(mc, function (name, value) {
                     first = parseInt(name.split('-')[0], 10);
                     second = parseInt(name.split('-')[1], 10);
-                    console.log(between(dc, first, second));
                     if (between(dc, first, second)) {
                         th.addClass(value);
                     }
@@ -1258,20 +1293,18 @@
                 $.each(mb, function (name, value) {
                     first = parseInt(name.split('-')[0], 10);
                     second = parseInt(name.split('-')[1], 10);
-                    console.log(between(dc, first, second));
                     if (between(dc, first, second)) {
                         th.addClass(value);
                     }
                 });
             });
 
-            $('.isDataSource, .isDependsOn, .isException, .isScreenShot, .isBrowser, .isExceptionMessage, .isSkipedDefault, .isSkiped').each(function (index) {
+            $('.isDataSource, .isDependsOn, .isException, .isScreenShot, #isScreenShotPresent, .isBrowser, .isExceptionMessage, .isSkipedDefault, .isSkiped').each(function (index) {
                 th = $(this);
                 dc = parseInt($(this).attr('is-present'), 10);
                 $.each(showHide, function (name, value) {
                     first = parseInt(name.split('-')[0], 10);
                     second = parseInt(name.split('-')[1], 10);
-                    console.log(between(dc, first, second));
                     if (between(dc, first, second)) {
                         th.addClass(value);
                     }
@@ -1380,16 +1413,18 @@
         });
 
         function viewImg(element) {
-            if ((!element.innerHTML.includes("src=\"data:image/png;base64,\"") && (!element.innerHTML.includes("src=\"data:image/png;base64,null\"")))) {
+            var imageObject = $(element).find(".screenshot");
+            var imageElement = imageObject[0];
+
+            if ((!imageElement.currentSrc.includes("src=\"data:image/png;base64,\"") &&
+                (!imageElement.currentSrc.includes("src=\"data:image/png;base64,null\"")))) {
                 var newTab = window.open();
                 setTimeout(function () {
-                    newTab.document.body.innerHTML = element.innerHTML;
-                    var test = element.innerHTML.srcElement;
+                    newTab.document.body.innerHTML = imageElement.outerHTML;
                 }, 500);
                 return false;
             }
         };
-
 
     </script>
 </body>

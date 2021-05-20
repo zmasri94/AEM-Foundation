@@ -3,10 +3,12 @@ using HRBlock.CTF;
 using HRBlock.CTF.UI;
 using HRBlock.CTF.UI.Web;
 
+
 namespace FoundationDemo
 {
     public class HelpMeChoose
     {
+       
         //file with tax pro virtually
         [UITest, HRBlock.CTF.Scope("AEM")]
         public void FileWithTaxProVirtually(IWebDriver driver, HRBlock.CTF.UI.Web.IWait wait, UrlString url)
@@ -154,7 +156,8 @@ namespace FoundationDemo
             driver.Action.GetUrl().Expect.String.Equals(url.Name);
         }
 
-           // Deluxe online 3/3
+        // Deluxe online 3/3
+       // [TestCase(123)]
 
         [UITest, HRBlock.CTF.Scope("AEM")]
         public void DeluxeOnlineSelfEmployed (IWebDriver driver, HRBlock.CTF.UI.Web.IWait wait, UrlString url)
@@ -168,6 +171,7 @@ namespace FoundationDemo
             driver.Action.Click(pom.SelfEmployed);
             driver.Action.Click(pom.EmploymentStatusContinueBtn);
             driver.Action.Click(pom.NoEarnedIncome);
+            wait.UntilVisible(pom.EarnedIncomeContinueBtn);
             driver.Action.Click(pom.EarnedIncomeContinueBtn);
 
 
@@ -182,27 +186,27 @@ namespace FoundationDemo
 
 
         //TODO: Deluxe WithoutState
-        //is it possible to add two scopes in the same POM?
-        //[UITest, HRBlock.CTF.Scope("TaxSoftware")]
-        //public void DeluxeWithState(IWebDriver driver, HRBlock.CTF.UI.Web.IWait wait, UrlString url)
-        //{
-        //    var pom = driver.Pom<HelpMeChooseToolPOM>();
-        //    url.Name = "https://hrbcomlnp.hrblock.com/tax-software/deluxe-tax-software/";
-        //    driver.GoToUrl();
-        //    driver.Action.Click(pom.HelpMeChoose);
-        //    driver.Action.Click(pom.Student);
-        //    driver.Action.Click(pom.EmploymentStatusContinueBtn);
-        //    driver.Action.Click(pom.YesItemizedDeductions);
-        //    driver.Action.Click(pom.ItemizedDeductionsContinueBtn);
-        //    driver.Action.Click(pom.YesFileStateTaxes);
-        //    driver.Action.Click(pom.FileStateTaxesContinueBtn);
+        [UITest, HRBlock.CTF.Scope("TaxSoftware")]
+        public void DeluxeWithState(IWebDriver driver, HRBlock.CTF.UI.Web.IWait wait, UrlString url)
+        {
+            var pom = driver.Pom<TaxSoftwarePOM>();
+            url.Name = "https://hrbcomlnp.hrblock.com/tax-software/deluxe-tax-software/";
+            driver.GoToUrl();
+            driver.Action.Click(pom.HelpMeChoose);
+            driver.Action.Click(pom.Retired);
+            driver.Action.Click(pom.ContinueBtn);
+            driver.Action.Click(pom.YesItemizedDeductions);
+            driver.Action.Click(pom.ItemizedDeductionsContinueBtn);
+            driver.Action.Click(pom.YesFileStateTaxes);
+            driver.Action.Click(pom.FileStateTaxesContinueBtn);
 
-        //    wait.UntilVisible(pom.ValidateButton);
+            wait.UntilVisible(pom.ValidateButton);
 
-        //    driver.Action.GetUrl().Expect.String.Equals(url.Name);
+            driver.Action.GetUrl().Expect.String.Equals(url.Name);
 
-        //}
+        }
 
+       
         [UITest, HRBlock.CTF.Scope("AEM")]
         //[DependsOn(typeof(HelpMeChoose), nameof(DeluxeOnlineWithoutState))]
 
@@ -227,8 +231,8 @@ namespace FoundationDemo
 
 
         }
-        [UITest, HRBlock.CTF.Scope("AEM")]
 
+        [UITest, HRBlock.CTF.Scope("AEM")]
         public void PremiumOnlineFreelance(IWebDriver driver, HRBlock.CTF.UI.Web.IWait wait, UrlString url)
         {
             var pom = driver.Pom<HelpMeChooseToolPOM>();
